@@ -42,7 +42,7 @@ std::ostream &operator<<(std::ostream &os, const FCFS &fcfs) {
             << fcfs.turnaround_time.at(i) << ';'
             << completion_time << std::endl;
     }
-    os << "Avg. waiting time: " << (float)fcfs.total_wt / (float)fcfs.m_processes.size() << fcfs.m_unit << "\n";
-    os << "Avg. turn-around time: " << (float)fcfs.total_tt / (float)fcfs.m_processes.size() << fcfs.m_unit;
+    os << "Avg. waiting time;" << (float)fcfs.total_wt / (float)fcfs.m_processes.size() << "\n";
+    os << "Avg. turn-around time;" << (float)fcfs.total_tt / (float)fcfs.m_processes.size();
     return os;
 }

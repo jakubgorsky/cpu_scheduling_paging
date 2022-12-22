@@ -93,3 +93,5 @@
 1689	1817	6931890926921315	cpu_scheduling.exe	83f6479db88baea8
 4	1638	6931891192923515	CMakeFiles/cpu_scheduling.dir/src/main.cpp.obj	7286f4f5c271c135
 1638	1763	6931891194174180	cpu_scheduling.exe	83f6479db88baea8
+4	521	6934126018842324	CMakeFiles/cpu_scheduling.dir/src/fcfs.cpp.obj	480e6b26667be0ee
+521	742	6934126021027020	cpu_scheduling.exe	83f6479db88baea8
