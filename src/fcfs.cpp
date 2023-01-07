@@ -3,6 +3,7 @@
 //
 
 #include <fcfs.h>
+#include <fstream>
 
 void FCFS::calcWaitingTime(){
     service_time.push_back(m_processes[0].arrival_time);
@@ -45,4 +46,14 @@ std::ostream &operator<<(std::ostream &os, const FCFS &fcfs) {
     os << "Avg. waiting time;" << (float)fcfs.total_wt / (float)fcfs.m_processes.size() << "\n";
     os << "Avg. turn-around time;" << (float)fcfs.total_tt / (float)fcfs.m_processes.size();
     return os;
+}
+
+void FCFS::insertProcesses(std::string filename) {
+    std::string tempString;
+    CPU_Process process;
+    std::fstream processesFile(filename, std::ios_base::in);
+//    while (std::getline(processesFile, tempString)){
+//
+//    }
+    // not implemented
 }

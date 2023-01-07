@@ -1,3 +1,3 @@
-D:/Documents/Programming/cpu_scheduling/cmake-build-debug/CMakeFiles/cpu_scheduling.dir
-D:/Documents/Programming/cpu_scheduling/cmake-build-debug/CMakeFiles/edit_cache.dir
-D:/Documents/Programming/cpu_scheduling/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/sndless/CLionProjects/cpu_scheduling_paging/cmake-build-debug/CMakeFiles/cpu_scheduling.dir
+/home/sndless/CLionProjects/cpu_scheduling_paging/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/sndless/CLionProjects/cpu_scheduling_paging/cmake-build-debug/CMakeFiles/rebuild_cache.dir

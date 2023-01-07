@@ -6,7 +6,7 @@
 #define CPU_SCHEDULING_FCFS_H
 #include <utility>
 #include <vector>
-#include <iostream>
+#include <string>
 #include "CPU_Process.h"
 
 class FCFS {
@@ -33,6 +33,9 @@ public:
         calcAvgTime();
     };
     void calcAvgTime();
+
+    void insertProcesses(std::string filename);
+
     ~FCFS() = default;
 
     friend std::ostream& operator<<(std::ostream& os, const FCFS& fcfs);
