@@ -6,7 +6,7 @@ set(SOURCE
         src/fcfs.cpp)
 
 set(HEADERS
-        headers/fcfs.h headers/PROCESS_GENERATOR.h headers/CPU_Process.h)
+        headers/fcfs.h headers/PROCESS_GENERATOR.h headers/CPU_Process.h headers/split.h)
 
 include_directories(${PROJECT_SOURCE_DIR}/src/ ${PROJECT_SOURCE_DIR}/headers/)
 

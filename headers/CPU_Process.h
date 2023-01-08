@@ -13,6 +13,11 @@ public:
         burst_time = 0;
         arrival_time = 0;
     }
+
+    friend std::ostream& operator<<(std::ostream& os, const CPU_Process& process){
+        os << process.ID << " " << process.burst_time << " " << process.arrival_time << "\n";
+        return os;
+    }
 };
 
 #endif //CPU_SCHEDULING_CPU_PROCESS_H

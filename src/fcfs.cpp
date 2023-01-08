@@ -32,6 +32,10 @@ void FCFS::calcAvgTime(){
 }
 
 std::ostream &operator<<(std::ostream &os, const FCFS &fcfs) {
+    if (!fcfs.calculated){
+        os << "There has been an error during calculations.";
+        return os;
+    }
     os << std::left;
     os << "Processes;Burst Time;Arrival Time;Waiting Time;Turn-Around Time;Completion Time" << std::endl;
     for (int i = 0; i < fcfs.m_processes.size(); i++) {
@@ -48,12 +52,7 @@ std::ostream &operator<<(std::ostream &os, const FCFS &fcfs) {
     return os;
 }
 
-void FCFS::insertProcesses(std::string filename) {
-    std::string tempString;
-    CPU_Process process;
-    std::fstream processesFile(filename, std::ios_base::in);
-//    while (std::getline(processesFile, tempString)){
-//
-//    }
-    // not implemented
+void FCFS::calculate() {
+    calcAvgTime();
+    calculated = true;
 }

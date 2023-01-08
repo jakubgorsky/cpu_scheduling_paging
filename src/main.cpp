@@ -3,17 +3,20 @@
 #include <fstream>
 
 int main() {
-    PROCESS_GENERATOR PG(250000, 100, 100);
-    std::vector<CPU_Process> processes = PG.GEN_PROCESSES();
+    PROCESS_GENERATOR PG(100000, 100, 100);
+//    std::vector<CPU_Process> processes = PG.GEN_PROCESSES();
+//
+//    std::fstream process_scsv("processes.scsv", std::ios_base::out);
+//    process_scsv << "";
+//    process_scsv.close();
+//    process_scsv.open("processes.scsv", std::ios_base::app);
+//    process_scsv << PG;
+//    process_scsv.close();
 
-    std::fstream process_scsv("processes.scsv", std::ios_base::out);
-    process_scsv << "";
-    process_scsv.close();
-    process_scsv.open("processes.scsv", std::ios_base::app);
-    process_scsv << PG;
-    process_scsv.close();
+    std::vector<CPU_Process> processes = PG.READ_PROCESSES("processes.scsv");
 
-    FCFS first_come_first_serve(processes, 'u');
+    FCFS first_come_first_serve(processes);
+    first_come_first_serve.calculate();
     std::fstream FCFS_SCSV("fcfs.scsv", std::ios_base::out);
     FCFS_SCSV << "";
     FCFS_SCSV.close();

@@ -8,6 +8,9 @@
 #include "CPU_Process.h"
 #include <vector>
 #include <random>
+#include <fstream>
+#include <string>
+#include "split.h"
 
 class PROCESS_GENERATOR {
 public:
@@ -34,6 +37,21 @@ public:
             temp.burst_time = (int)distBT(range_bt);
             processes.push_back(temp);
             temp.CLR();
+        }
+        return processes;
+    }
+
+    std::vector<CPU_Process> READ_PROCESSES(std::string filepath){
+        std::string read_val;
+        std::ifstream file(filepath);
+        CPU_Process temp_process;
+        while (std::getline(file, read_val)){
+            std::vector<std::string> vals = split(read_val.c_str(), ';');
+            temp_process.ID = std::stoi(vals.at(0));
+            temp_process.burst_time = std::stoi(vals.at(1));
+            temp_process.arrival_time = std::stoi(vals.at(2));
+            processes.push_back(temp_process);
+            temp_process.CLR();
         }
         return processes;
     }
