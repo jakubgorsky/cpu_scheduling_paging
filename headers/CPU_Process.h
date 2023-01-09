@@ -7,7 +7,8 @@
 
 struct CPU_Process{
 public:
-    int ID{}, burst_time{}, arrival_time{};
+    long long int ID{}, burst_time{}, arrival_time{}, start_time{}, completion_time{}, turnaround_time{}, waiting_time{};
+    bool completed = false;
     void CLR(){
         ID = 0;
         burst_time = 0;

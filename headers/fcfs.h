@@ -19,13 +19,13 @@ public:
     friend std::ostream& operator<<(std::ostream& os, const FCFS& fcfs);
 
 private:
-    int total_tt{}, total_wt{};
+    long double avg_wt{}, avg_tt{};
     bool calculated = false;
     void calcAvgTime();
     void calcWaitingTime();
     void calcTurnaroundTime();
     std::vector<CPU_Process> m_processes;
-    std::vector<int> service_time, waiting_time, turnaround_time;
+    std::vector<int> service_time;
 };
 
 

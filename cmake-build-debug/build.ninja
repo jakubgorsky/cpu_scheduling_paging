@@ -63,6 +63,13 @@ build CMakeFiles/cpu_scheduling.dir/src/fcfs.cpp.obj: CXX_COMPILER__cpu_scheduli
   OBJECT_DIR = CMakeFiles\cpu_scheduling.dir
   OBJECT_FILE_DIR = CMakeFiles\cpu_scheduling.dir\src
 
+build CMakeFiles/cpu_scheduling.dir/src/sjf.cpp.obj: CXX_COMPILER__cpu_scheduling_Debug D$:/Documents/Programming/cpu_scheduling/src/sjf.cpp || cmake_object_order_depends_target_cpu_scheduling
+  DEP_FILE = CMakeFiles\cpu_scheduling.dir\src\sjf.cpp.obj.d
+  FLAGS = -g -std=gnu++14
+  INCLUDES = -ID:/Documents/Programming/cpu_scheduling/src -ID:/Documents/Programming/cpu_scheduling/headers
+  OBJECT_DIR = CMakeFiles\cpu_scheduling.dir
+  OBJECT_FILE_DIR = CMakeFiles\cpu_scheduling.dir\src
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target cpu_scheduling
@@ -71,7 +78,7 @@ build CMakeFiles/cpu_scheduling.dir/src/fcfs.cpp.obj: CXX_COMPILER__cpu_scheduli
 #############################################
 # Link the executable cpu_scheduling.exe
 
-build cpu_scheduling.exe: CXX_EXECUTABLE_LINKER__cpu_scheduling_Debug CMakeFiles/cpu_scheduling.dir/src/main.cpp.obj CMakeFiles/cpu_scheduling.dir/src/fcfs.cpp.obj
+build cpu_scheduling.exe: CXX_EXECUTABLE_LINKER__cpu_scheduling_Debug CMakeFiles/cpu_scheduling.dir/src/main.cpp.obj CMakeFiles/cpu_scheduling.dir/src/fcfs.cpp.obj CMakeFiles/cpu_scheduling.dir/src/sjf.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\cpu_scheduling.dir
