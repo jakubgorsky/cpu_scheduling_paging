@@ -8,8 +8,7 @@ SJF::SJF(std::vector<CPU_Process> processes)
     : m_processes(std::move(processes)){
 }
 
-SJF::~SJF() {
-}
+SJF::~SJF() = default;
 
 void SJF::calculate() {
     while(!calculated) {
@@ -18,7 +17,7 @@ void SJF::calculate() {
             calculated = true;
             return;
         }
-        int pid = findShortestJob();
+        long long int pid = findShortestJob();
         if (pid == -1)
             curr_time++;
         else {
@@ -39,7 +38,7 @@ void SJF::calcAvgTime() {
     avg_tt = (double)total_tt / (double)m_processes.size();
 }
 
-void SJF::calcTimes(int pid) {
+void SJF::calcTimes(long long int pid) {
     m_processes.at(pid).start_time = curr_time;
     m_processes.at(pid).completion_time = m_processes.at(pid).start_time + m_processes.at(pid).burst_time;
     m_processes.at(pid).turnaround_time = m_processes.at(pid).completion_time - m_processes.at(pid).arrival_time;
@@ -49,14 +48,14 @@ void SJF::calcTimes(int pid) {
     total_wt += m_processes.at(pid).waiting_time;
 }
 
-int SJF::findShortestJob(){
-    int minimum_bt = 100000, pid = -1;
+long long int SJF::findShortestJob(){
+    long long int minimum_bt = 100000, pid = -1;
 
     for (CPU_Process p : m_processes){
         if (p.arrival_time > curr_time || p.completed){
             continue;
         }
-        if(p.burst_time < minimum_bt){
+        if (p.burst_time < minimum_bt){
             minimum_bt = p.burst_time;
             pid = p.ID;
         }
@@ -76,7 +75,7 @@ std::ostream &operator<<(std::ostream &os, const SJF &sjf) {
     os << std::left;
     os << "Processes;Burst Time;Arrival Time;Waiting Time;Turn-Around Time;Completion Time" << std::endl;
     for (const auto & p : sjf.m_processes) {
-        int completion_time = p.turnaround_time + p.arrival_time;
+        long long int completion_time = p.turnaround_time + p.arrival_time;
         os << p.ID << ';'
            << p.burst_time << ';'
            << p.arrival_time<< ';'

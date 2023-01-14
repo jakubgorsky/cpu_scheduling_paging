@@ -22,12 +22,11 @@ private:
     long double avg_wt{}, avg_tt{};
     bool calculated = false;
 
-    int findShortestJob();
+    long long int findShortestJob();
     void calcAvgTime();
-    void calcTimes(int pid);
+    void calcTimes(long long int pid);
     bool allCompleted();
     std::vector<CPU_Process> m_processes;
-    std::vector<int> service_time;
 };
 
 #endif //CPU_SCHEDULING_SJF_H

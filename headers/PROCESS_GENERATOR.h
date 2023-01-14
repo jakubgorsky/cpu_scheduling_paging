@@ -19,7 +19,7 @@ public:
     ~PROCESS_GENERATOR() = default;
 
     std::vector<CPU_Process> GEN_PROCESSES(){
-        CPU_Process temp{};
+        CPU_Process temp;
         std::random_device randomDevice;
         std::mt19937 range_bt(randomDevice());
         std::mt19937 range_at(randomDevice());
@@ -63,9 +63,19 @@ public:
         return os;
     }
 
+    CPU_Process* getProcess(int PID) {
+        if (PID > processes.size() || PID < 0){
+            return nullptr;
+        }
+        else
+            return &processes.at(PID);
+    }
+
 private:
     int m_no_processes{}, m_bt_range{}, m_at_range{};
     std::vector<CPU_Process> processes;
+
+
 };
 
 #endif //CPU_SCHEDULING_PROCESS_GENERATOR_H

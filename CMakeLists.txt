@@ -3,10 +3,10 @@ project(cpu_scheduling)
 
 set(SOURCE
         src/main.cpp
-        src/fcfs.cpp src/sjf.cpp)
+        src/fcfs.cpp src/sjf.cpp src/lfu.cpp src/mfu.cpp)
 
 set(HEADERS
-        headers/fcfs.h headers/PROCESS_GENERATOR.h headers/CPU_Process.h headers/split.h headers/sjf.h)
+        headers/fcfs.h headers/PROCESS_GENERATOR.h headers/CPU_Process.h headers/split.h headers/sjf.h headers/lfu.h headers/mfu.h)
 
 include_directories(${PROJECT_SOURCE_DIR}/src/ ${PROJECT_SOURCE_DIR}/headers/)
 
