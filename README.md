@@ -50,6 +50,7 @@ FCFS first_come_first_serve(processes);
 first_come_first_serve.calculate();
 
 SJF sjf(std::vector<CPU_processes> processes);
+
 SJF sjf(processes);
 sjf.calculate();
 ```
@@ -75,3 +76,29 @@ Processes;Burst Time;Arrival Time;Waiting Time;Turn-Around Time;Completion Time
 Avg. waiting time;193.997
 Avg. turn-around time;219.398
 ```
+
+## LFU / MFU
+
+Both algorithms are implemented using OOP methodology. Hence, using them is quite easy:
+
+```cpp
+LFU lfu(int no_pages, std::vector<int> pages);
+
+LFU lfu(3, pages);
+lfu.run();
+std::cout << "LFU" << std::endl;
+std::cout << "Page Faults: " << lfu.getPageFaults() << std::endl;
+std::cout << "Hits: "<< lfu.getHits() << std::endl;
+
+// MFU
+
+MFU mfu(int no_pages, std::vector<int> pages);
+
+MFU mfu(3, pages);
+mfu.run();
+std::cout << "MFU" << std::endl;
+std::cout << "Page Faults: " << mfu.getPageFaults() << std::endl;
+std::cout << "Hits: " << mfu.getHits();
+```
+
+They do not have any standardized output into an .scsv file as FCFS and SJF do because of the simple nature of the output. Only values one may need are accessible throught member methods - `getPageFaults()` and `getHits()`.
