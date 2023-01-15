@@ -23,9 +23,8 @@ void LFU::run(){
         if (isCached(p) && !framesEmpty()){
             auto it = std::find_if(page_stats.begin(), page_stats.end(),
                          [&p](std::array<int, 3> a){ return a[0] == p; });
-            it->at(1) += 1;
+            it->at(1)++;
             hits++;
-            printFrames(frames);
             time++;
             continue;
         }
@@ -34,7 +33,6 @@ void LFU::run(){
             std::find_if(page_stats.begin(), page_stats.end(),
                          [&p](const std::array<int, 3>& a){ return a[0] == p; })->at(1)++;
             page_faults++;
-            printFrames(frames);
             time++;
             continue;
         }
@@ -57,7 +55,6 @@ void LFU::run(){
             new_pid_it->at(1)++;
             new_pid_it->at(2) = time;
             page_faults++;
-            printFrames(frames);
             time++;
             continue;
         }
@@ -71,11 +68,9 @@ void LFU::run(){
             it->at(1)++;
             it->at(2) = time;
             page_faults++;
-            printFrames(frames);
             time++;
             continue;
         }
-        printFrames(frames);
         time++;
     }
 }

@@ -9,7 +9,6 @@
 #include <iostream>
 #include <algorithm>
 #include <array>
-#include <set>
 
 class MFU {
 public:

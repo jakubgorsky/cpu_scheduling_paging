@@ -3,11 +3,6 @@
 //
 #include "mfu.h"
 
-//
-// Created by Jakub Górski on 09/01/2023.
-//
-
-#include "mfu.h"
 MFU::MFU(int no_frames, std::vector<int> pages)
         : m_no_frames(no_frames), m_pages(std::move(pages)){
     for (int i = 0; i < m_no_frames; i++){
@@ -28,9 +23,8 @@ void MFU::run(){
         if (isCached(p) && !framesEmpty()){
             auto it = std::find_if(page_stats.begin(), page_stats.end(),
                                    [&p](std::array<int, 3> a){ return a[0] == p; });
-            it->at(1) += 1;
+            it->at(1)++;
             hits++;
-            printFrames(frames);
             time++;
             continue;
         }
@@ -39,7 +33,6 @@ void MFU::run(){
             std::find_if(page_stats.begin(), page_stats.end(),
                          [&p](const std::array<int, 3>& a){ return a[0] == p; })->at(1)++;
             page_faults++;
-            printFrames(frames);
             time++;
             continue;
         }
@@ -62,7 +55,6 @@ void MFU::run(){
             new_pid_it->at(1)++;
             new_pid_it->at(2) = time;
             page_faults++;
-            printFrames(frames);
             time++;
             continue;
         }
@@ -76,11 +68,9 @@ void MFU::run(){
             it->at(1)++;
             it->at(2) = time;
             page_faults++;
-            printFrames(frames);
             time++;
             continue;
         }
-        printFrames(frames);
         time++;
     }
 }
