@@ -102,3 +102,5 @@ std::cout << "Hits: " << mfu.getHits();
 ```
 
 They do not have any standardized output into an .scsv file as FCFS and SJF do because of the simple nature of the output. Only values one may need are accessible throught member methods - `getPageFaults()` and `getHits()`.
+
+Also, if need be, one can print out current frames using `printFrames()` member method. It simply iterates through all of the frames and prints out (to `std::cout`) page numbers stored within the frame.
