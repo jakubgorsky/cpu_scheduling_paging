@@ -1,6 +1,6 @@
 # CPU Scheduling and Paging algorithms simulation
 
-As a part of Operating Systems course we were taksed to implement, simulate and compare different CPU Scheduling (in this case FCFS and SJF) and Page Swapping algorithms (the latter are not yet implemented)
+As a part of Operating Systems course we were taksed to implement, simulate and compare different CPU Scheduling (in this case FCFS and SJF) and Page Swapping algorithms (LRU and MFU)
 
 # Usage
 
